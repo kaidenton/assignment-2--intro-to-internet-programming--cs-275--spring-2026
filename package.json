@@ -10,6 +10,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.1"
+    "acorn": "8.8.0",
+    "gulp": "^5.0.1",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "browser-sync": "^3.0.4",
+    "del": "^8.0.1",
+    "eslint": "^8.57.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-html": "^0.4.4",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^6.0.1",
+    "gulp-stylelint": "^13.0.0",
+    "sass": "^1.98.0"
   }
 }
