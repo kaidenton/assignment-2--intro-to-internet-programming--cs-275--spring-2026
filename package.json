@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "acorn": "8.8.0",
+    "acorn": "^8.16.0",
+    "acorn-jsx": "^5.3.2",
     "gulp": "^5.0.1",
     "gulp-uglify": "^3.0.2"
   },
@@ -20,10 +21,11 @@
     "eslint": "^8.57.1",
     "gulp-babel": "^8.0.0",
     "gulp-eslint": "^5.0.0",
-    "gulp-html": "^0.4.4",
+    "gulp-html": "^6.1.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-sass": "^6.0.1",
     "gulp-stylelint": "^13.0.0",
+    "node": "^25.9.0",
     "sass": "^1.98.0"
   }
 }

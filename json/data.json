@@ -1,5 +1,6 @@
-[
-  {
+reviews({
+  "albums": [
+    {
     "artist": "Dawn of Midi",
     "album": "Dysnomia",
     "cover_image": {
@@ -71,4 +72,5 @@
       "url": "https://jazztimes.com/archives/gotan-project-lunatico/"
     }
   }
-]
+  ]
+});

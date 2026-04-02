@@ -1,13 +1,11 @@
-const { src, dest, series, watch } = require(`gulp`),
+const { src, dest, series } = require(`gulp`),
     CSSLinter = require(`gulp-stylelint`),
     { deleteAsync } = require(`del`),
     babel = require(`gulp-babel`),
     htmlCompressor = require(`gulp-htmlmin`),
     jsCompressor = require(`gulp-uglify`),
     jsLinter = require(`gulp-eslint`),
-    sass = require(`gulp-sass`)(require(`sass`)),
-    browserSync = require(`browser-sync`),
-    reload = browserSync.reload;
+    sass = require(`gulp-sass`)(require(`sass`))
 
 let compileCSSForDev = () => {
     return src(`styles/*.css`)
@@ -60,34 +58,11 @@ let copyUnprocessedAssetsForProd = () => {
         '!*.html',
         '!styles/**',
         '!img/.gitignore',
-        '!prod/**'
+        '!prod/**',
+        '!gulpfile.js',
+        '!node_modules/**'
     ], {dot: true})
         .pipe(dest(`prod`));
-};
-
-let serve = () => {
-    browserSync({
-        notify: true,
-        reloadDelay: 50,
-        server: {
-            baseDir: [
-                `temp`,
-                '.'
-            ]
-        }
-    });
-
-    watch(`js/*.js`, series(lintJS, transpileJSForDev))
-        .on(`change`, reload);
-
-    watch(`styles/*.css`, compileCSSForDev)
-        .on(`change`, reload);
-
-    watch(`*.html`, compressHTML)
-        .on(`change`, reload);
-
-    watch(`img/*`)
-        .on(`change`, reload);
 };
 
 async function clean() {
@@ -128,13 +103,12 @@ exports.compileCSSForProd = compileCSSForProd;
 exports.transpileJSForProd = transpileJSForProd;
 exports.copyUnprocessedAssetsForProd = copyUnprocessedAssetsForProd;
 exports.clean = clean;
-exports.default = listTasks;
 exports.lintCSS = lintCSS;
-exports.serve = series(
-    compileCSSForDev,
+exports.default = series(
+    lintCSS, 
     lintJS,
     transpileJSForDev,
-    serve
+    compileCSSForDev
 );
 exports.build = series(
     clean,
