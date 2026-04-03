@@ -9,6 +9,76 @@
 //
 // DON’T PROCEED UNTIL YOU’RE SURE STYLELINT AND EDITORCONFIG ARE WORKING RIGHT
 // -------------------------------------------------------------------------- */
-abcdef {
-     color: cs275
+
+header {
+     text-align: center;
+}
+
+body {
+     font-family: 'Open Sans', sans-serif;
+     line-height: 1.4;
+}
+
+h1 {
+     font-size: 2rem;
+     font-weight: 600;
+     line-height: 1.1875;
+}
+
+h2 {
+     font-size: 1.25rem;
+     font-weight: 600;
+}
+
+.slide {
+     width: 640px;
+     box-sizing: border-box;
+     text-align: center;
+}
+
+.slide h2 {
+     margin-bottom: 5px;
+}
+
+.slide h3 {
+     margin-bottom: 15px;
+}
+
+.slide img {
+     display: block;
+     margin: 0 auto 10px auto;
+}
+
+.slide p {
+     font-size: 0.8rem;
+     text-align: left;
+     margin-bottom: 10px;
+}
+
+.credit {
+     font-size: 0.8rem;
+     font-weight: 300;
+     margin-bottom: 10px;
+}
+
+.carousel {
+     position: relative;
+     width: 640px;
+     overflow: hidden;
+     margin: auto;
+}
+
+.carousel-slides {
+     display: flex;
+     transition: transform 0.4s ease;
+}
+
+.carousel-navigation {
+     position: absolute;
+     top: 50%;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     transform: translateY(-50%);
+     z-index: 10;
 }
